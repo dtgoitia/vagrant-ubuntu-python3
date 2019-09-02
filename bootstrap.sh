@@ -45,15 +45,20 @@ echo "======================================================"
 echo ""
 echo "installing python 3 pip"
 apt-get --assume-yes install python3-pip
-alias "python"="python3"
-alias "py"="python3"
-pip install pipenv
-pip install powerline-status
+sudo pip3 install pipenv
+sudo pip3 install powerline-status
 
 # Set Python 3 as default
 echo "source ~/.bash_aliases" >> ~/.bashrc
 echo "alias python=python3" >> ~/.bash_aliases
+echo "alias py=python3" >> ~/.bash_aliases
 echo "alias pip=pip3" >> ~/.bash_aliases
 
 echo "alias python python3" >> ~/.config/fish/config.fish
 echo "alias pip pip3" >> ~/.config/fish/config.fish
+
+mkdir projects
+cd projects
+git clone git@github.com:dtgoitia/abot.git
+cd abot
+pipenv install --dev

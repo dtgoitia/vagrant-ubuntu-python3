@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   # Sync folders:
   #   - Host: ./abot/
   #   - Guest: ./projects/abot/
-  # config.vm.synced_folder "./abot/", "/home/vagrant/projects/abot"
+  config.vm.synced_folder "../abot/", "/home/vagrant/projects/abot"
 
   # To fix error:
   # [default] GuestAdditions seems to be installed (6.0.8) correctly, but not running.
